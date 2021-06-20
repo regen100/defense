@@ -29,6 +29,9 @@
             }
         }
         function create_board(row_num, column_num) {
+            if (document.getElementById('geme_board') != null) {
+                document.getElementById('geme_board').remove()
+            }
             var body = document.getElementsByTagName("body")[0];
             var tbl = document.createElement("table");
             tbl.id = 'geme_board';
@@ -108,6 +111,7 @@
     場の列数：<input type="number" value="4" min="1" id="input_column_num"><br>
     1スロットカードの組数：<input type="number" value="2" min="0" id="input_oneslot_num"><br>
     2スロットカードの組数：<input type="number" value="2" min="0" id="input_twoslot_num"><br>
+    <input type="button" onclick="draw_board()" value="再描画">
 </body>
 
 </html>
