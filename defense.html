@@ -49,12 +49,10 @@
             }
             tbl.appendChild(tblBody);
             tbl.addEventListener("click", e => {
-                if (e.target.hasChildNodes()) {
-                    e.target.childNodes.forEach(element => {
-                        element.style.visibility = '';
-                    });
+                if (e.target.style.opacity == '0.3') {
+                    e.target.style.opacity = '1.0';
                 } else {
-                    e.target.style.visibility = 'hidden';
+                    e.target.style.opacity = '0.3';
                 }
             });
             body.appendChild(tbl);
