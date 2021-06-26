@@ -42,19 +42,19 @@
                     var cell = document.createElement("td");
                     var cellCanvas = document.createElement("canvas");;
                     cellCanvas.id = 'canvas_' + (i * column_num + j);
+                    cellCanvas.addEventListener("click", e => {
+                        if (e.target.style.opacity == '0.3') {
+                            e.target.style.opacity = '1.0';
+                        } else {
+                            e.target.style.opacity = '0.3';
+                        }
+                    });
                     cell.appendChild(cellCanvas);
                     row_element.appendChild(cell);
                 }
                 tblBody.appendChild(row_element);
             }
             tbl.appendChild(tblBody);
-            tbl.addEventListener("click", e => {
-                if (e.target.style.opacity == '0.3') {
-                    e.target.style.opacity = '1.0';
-                } else {
-                    e.target.style.opacity = '0.3';
-                }
-            });
             body.appendChild(tbl);
             tbl.setAttribute("border", "2");
         }
